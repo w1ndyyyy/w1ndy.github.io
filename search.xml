@@ -8,8 +8,14 @@
       <link href="/article/d12d6355.html"/>
       <url>/article/d12d6355.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>CSRF(跨站请求伪造)，攻击者盗用他人身份，以他人名义发送恶意请求。<br><img src="https://raw.githubusercontent.com/w1ndyyyy/blog_images/main/202303231725022.jpg"></p>]]></content>
       
+      
+      <categories>
+          
+          <category> Web安全 </category>
+          
+      </categories>
       
       
     </entry>
