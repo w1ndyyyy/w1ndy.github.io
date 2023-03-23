@@ -8,7 +8,7 @@
       <link href="/article/d12d6355.html"/>
       <url>/article/d12d6355.html</url>
       
-        <content type="html"><![CDATA[<p>CSRF(跨站请求伪造)，攻击者盗用他人身份，以他人名义发送恶意请求。<br><img src="https://raw.githubusercontent.com/w1ndyyyy/blog_images/main/202303231725022.jpg"></p>]]></content>
+        <content type="html"><![CDATA[<p>CSRF(跨站请求伪造)，攻击者盗用他人身份，以他人名义发送恶意请求。<br><img src="https://raw.githubusercontent.com/w1ndyyyy/blog_images/main/202303231725022.jpg"></p><h3 id="0x00-前提"><a href="#0x00-前提" class="headerlink" title="0x00 前提"></a>0x00 前提</h3><ul><li>用户登录了网站A</li><li>用户触发了攻击者构造的恶意请求</li></ul><h3 id="0x01-防御手段"><a href="#0x01-防御手段" class="headerlink" title="0x01 防御手段"></a>0x01 防御手段</h3><ul><li>重要请求操作设置二次认证</li><li>设置合适的会话超时时间</li><li>重要请求操作尽量使用POST</li><li>CSRF-Token</li><li>SOP(同源策略)，检查HTTP请求头中Referer字段是否合法</li></ul>]]></content>
       
       
       <categories>
