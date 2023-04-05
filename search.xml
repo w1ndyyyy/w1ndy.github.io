@@ -4,18 +4,12 @@
   
     
     <entry>
-      <title>SSRF</title>
-      <link href="/article/813434ca.html"/>
-      <url>/article/813434ca.html</url>
+      <title>CC认证标准</title>
+      <link href="/article/6263fcb7.html"/>
+      <url>/article/6263fcb7.html</url>
       
-        <content type="html"><![CDATA[<p>SSRF(服务端请求伪造)，攻击者将恶意请求发给服务器，服务器执行该请求获取内网资源。SSRF通常用于外部网络无法直接访问的内部资源。<br><img src="https://raw.githubusercontent.com/w1ndyyyy/blog_images/main/202303231939285.jpg"></p><h3 id="0x00-PHP中SSRF危险函数与协议"><a href="#0x00-PHP中SSRF危险函数与协议" class="headerlink" title="0x00 PHP中SSRF危险函数与协议"></a>0x00 PHP中SSRF危险函数与协议</h3><ul><li>file_get_contents()</li><li>fsockopen()</li><li>curl_exec()</li><li>file:&#x2F;&#x2F;   读取文件，如 file:&#x2F;&#x2F;&#x2F;etc&#x2F;passwd</li><li>dict:&#x2F;&#x2F;   访问资源，如 dict:&#x2F;&#x2F;&#x2F;192.168.0.1:6739&#x2F;info</li><li>gopher:&#x2F;&#x2F; 分布式文档传递服务，可用<a href="https://github.com/tarunkant/Gopherus">gopherus</a>生成payload</li></ul><h3 id="0x01-利用方式"><a href="#0x01-利用方式" class="headerlink" title="0x01 利用方式"></a>0x01 利用方式</h3><ul><li>内网端口扫描</li><li>内网应用及服务漏洞扫描</li><li>若PHP安装了expect扩展，可利用expect协议命令执行</li><li>DOS攻击</li><li>file协议暴力枚举敏感文件</li></ul><h3 id="0x01-防御手段"><a href="#0x01-防御手段" class="headerlink" title="0x01 防御手段"></a>0x01 防御手段</h3><ul><li>过滤返回的信息</li><li>同意报错信息</li><li>限制请求端口</li><li>限制访问IP</li><li>禁用不常用协议</li></ul><h3 id="IP过滤绕过"><a href="#IP过滤绕过" class="headerlink" title="IP过滤绕过"></a>IP过滤绕过</h3><h4 id="IP改写-192-168-0-1"><a href="#IP改写-192-168-0-1" class="headerlink" title="IP改写(192.168.0.1)"></a>IP改写(192.168.0.1)</h4><ul><li>8进制：0300.0250.0.1</li><li>16进制：0xc0.0xa8.0.1</li><li>10进制整数格式：3232235521</li><li>16进制整数格式：0xc0a80001</li><li>合并后两位：1.1.278 &#x2F; 1.1.755</li><li>合并后三位：1.278 &#x2F; 1.755 &#x2F; 3.14159267</li></ul><h4 id="CRLF编码-HTTP头部注入"><a href="#CRLF编码-HTTP头部注入" class="headerlink" title="CRLF编码(HTTP头部注入)"></a>CRLF编码(HTTP头部注入)</h4><p>通过添加回车换行绕过过滤</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">%0d --&gt; 0x0d --&gt; \r 回车</span><br><span class="line">%0a --&gt; 0x0a --&gt; \n 换行</span><br><span class="line">https://www.example.com?url=http://eval.com%0d%0aHOST:fuzz.com%0d%0a</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h3 id="专业术语"><a href="#专业术语" class="headerlink" title="专业术语"></a>专业术语</h3><ol><li>安全保障要求 security assurance requirement(SAR)<br>涉及评估对象（TOE）的开发和交付的条件和过程的安全要求，以及评估者对这些条件和过程产生的证据所要求的行为。</li><li>安全功能要求 security function requirement(SFR)<br>在特定安全目标（ST）或保护轮廓（PP）中定义的、符合评估对象安全问题定义的安全要求</li><li>安全目标 security target(ST)<br>基于安全问题定义，针对评估对象与实现相关的安全要求的陈述</li><li>安全目的 security objective<br>用于对抗特定的威胁或满足特定组织安全策略的一种陈述</li><li>安全属性 security attribute<br>主体、用户、客体、信息、会话、资源的特征，用于定义安全功能要求</li><li>安全问题定义 security problem definition(SPD)<br>以一种形式化的方法定义评估对象要处理的安全基本特征和范围的陈述</li><li>安全要求 security requirement<br>在特定安全目标或保护轮廓中定义的一部分评估对象安全规范要求</li><li>保护轮廓 protection profile(PP)<br>针对一类评估对象的与实现无关的安全需求陈述</li></ol>]]></content>
       
-      
-      <categories>
-          
-          <category> Web安全 </category>
-          
-      </categories>
       
       
     </entry>
