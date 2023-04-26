@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>eNSP配置Switch</title>
+      <link href="/article/c70deb04.html"/>
+      <url>/article/c70deb04.html</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://raw.githubusercontent.com/w1ndyyyy/blog_images/main/202304261409592.png"></p><h3 id="PC1-和-PC2-在同一个vlan"><a href="#PC1-和-PC2-在同一个vlan" class="headerlink" title="PC1 和 PC2 在同一个vlan"></a>PC1 和 PC2 在同一个vlan</h3><p>交换机配置</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sys</span><br><span class="line">vlan 10 # 创建一个vlan，编号为10</span><br><span class="line">interface g 0/0/1</span><br><span class="line">port link-type access   # 0/0/1端口设置为access口</span><br><span class="line">port default vlan 10    # 将0/0/1端口加入到vlan 10中</span><br><span class="line">interface g 0/0/2</span><br><span class="line">port link-type access</span><br><span class="line">port default vlan 10</span><br></pre></td></tr></table></figure><p>连通性测试<br><img src="https://raw.githubusercontent.com/w1ndyyyy/blog_images/main/202304261415322.png"><br><img src="https://raw.githubusercontent.com/w1ndyyyy/blog_images/main/202304261416797.png"></p><h3 id="PC1-和-PC2-不在同一个vlan"><a href="#PC1-和-PC2-不在同一个vlan" class="headerlink" title="PC1 和 PC2 不在同一个vlan"></a>PC1 和 PC2 不在同一个vlan</h3><p>交换机配置</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sys</span><br><span class="line">vlan 10 # 划分一个vlan，编号为10</span><br><span class="line">interface g 0/0/1</span><br><span class="line">port link-type access   # 0/0/1端口设置为access口</span><br><span class="line">port default vlan 10    # 将0/0/1端口划分到vlan 10中</span><br><span class="line">vlan 20</span><br><span class="line">interface g 0/0/2</span><br><span class="line">port link-type access</span><br><span class="line">port default vlan 20</span><br></pre></td></tr></table></figure><p>连通性测试<br><img src="https://raw.githubusercontent.com/w1ndyyyy/blog_images/main/202304261418979.png"><br><img src="https://raw.githubusercontent.com/w1ndyyyy/blog_images/main/202304261419774.png"></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>eNSP配置Router</title>
       <link href="/article/ed365239.html"/>
       <url>/article/ed365239.html</url>
